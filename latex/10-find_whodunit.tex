@@ -1,0 +1,164 @@
+\chapter{Find Whodunit}
+\hypertarget{find-whodunit}{}
+
+Find Whodunit adds an important kind of searching to the project. Most
+of the project is devoted to telling you about a cat's location and
+history. But sometimes you will know the location and time, but not
+the cat, and that is where Find Whodunit helps. With Find Whodunit,
+you request a certain time and location, and it searches for any cats
+that were nearby.
+
+You start with a date and location, which are required. The software
+then searches through the available data to find GPS points that
+match.
+
+There is a full command-line interface to Find Whodunit, and a GUI
+interface. Note that the GUI works by interacting with the command-line
+interface. Use whichever interface is appropriate for your project.
+
+\subsection{Some Whodunit Internals}
+
+One approach to this function might be to compare \textbf{every} point
+in the data set against the query. Find Whodunit, as currently
+implemented, does not take this approach.
+
+The first thing Find Whodunit does is prune the whole data set to
+roughly the correct time and location. For example, we take a multiple
+of the design radius, and only keep points that are within that
+distance. And we take a multiple of the time cutoff, and only keep
+points that are within that time frame.
+
+Now we have a smaller set of data that is more likely to be correct.
+We use that smaller set to look for matches, calculate the relative
+closeness of every point, put points in order by closeness, and
+display the results.
+
+\section{Find Whodunit Files}
+
+Find Whodunit is represented in the files by the following file:
+
+\begin{verbatim}
+    catamount/find_whodunit.py
+\end{verbatim}
+
+\section{Find Whodunit Settings}
+\hypertarget{whodunit-settings}{}
+
+The following settings apply to the Find Whodunit function no matter
+where it is used from. These are the ``essential'' settings which are
+used in different ways in the configuration file, the command-line
+interface, and the GUI.
+
+\begin{description}
+
+\item[radius INT]
+\hypertarget{whodunit-radius}{}
+
+Design radius of a match, in meters. Only points that are within this
+distance from the request location will be considered a true match,
+and displayed as a match.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\item[time\_cutoff INT]
+\hypertarget{whodunit-time-cutoff}{}
+
+Design time cutoff of a match, in hours. Only points that are within
+this time frame from the request time will be considered a true
+match, and displayed as a match.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\item[date DATE]
+\hypertarget{whodunit-date}{}
+
+This is the request date that is the basis for the search. This should
+be a single point on a hypothetical timeline; by widening or narrowing
+the \verb=time_cutoff= you can enlarge or constrict the search period.
+
+The argument is of type \hyperlink{argument-type-date}{DATE}.
+
+\item[x\_coordinate INT]
+\hypertarget{whodunit-x-coordinate}{}
+
+This is the X coordinate of the requested location, in NAD27 format.
+This is also known as the ``easting'' or ``east''. This should work
+with \verb=y_coordinate= to specify a single point in space; by
+enlarging or shrinking the \verb=radius= you can expand or contract
+the search area.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\item[y\_coordinate INT]
+\hypertarget{whodunit-y-coordinate}{}
+
+This is the Y coordinate of the requested location, in NAD27 format.
+This is also known as the ``northing'' or ``north''. This should work
+with \verb=x_coordinate= to specify a single point in space; by
+enlarging or shrinking the \verb=radius= you can expand or contract
+the search area.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\item[text\_style CHOICE]
+\hypertarget{whodunit-text-style}{}
+
+The text that is produced can be in one of several formats.
+
+The argument is of type \hyperlink{argument-type-choice}{CHOICE}. The text
+style \verb=CHOICE= should be one of these:
+
+\begin{itemize}
+\item \verb=csv= --- tabular format suitable for sharing between applications
+\item \verb=descriptive= --- human readable, omits the display of every point
+\item \verb=descriptive-all= --- human readable, and shows every point in the whodunit
+\end{itemize}
+
+\end{description}
+
+
+\section{CLI Find Whodunit}
+
+The command-line interface gives easy access to all the settings from the
+command line, and therefore from scripts. Here is how you get started with
+the command-line interface:
+
+\begin{verbatim}
+    cd C:\path\to\catamount
+    find_whodunit.py --help
+\end{verbatim}
+
+Here are the settings for the command-line, along with links to
+more information about each setting.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|}
+  \hline
+  Long Form & Short Form & Reference \\ \hline \hline
+
+  \verb=--help= & \verb=-h= & Print usage info and exit \\ \hline
+  \verb=--datafile_path PATH= & \verb=-f PATH= & \hyperlink{global-datafile-path}{datafile\_path} \\ \hline
+  \verb=--outdir_path PATH= & \verb=-o PATH= & \hyperlink{global-outdir-path}{outdir\_path} \\ \hline
+  \verb=--radius INT= & \verb=-r INT= & \hyperlink{whodunit-radius}{radius} \\ \hline
+  \verb=--time_cutoff INT= & \verb=-t INT= & \hyperlink{whodunit-time-cutoff}{time\_cutoff} \\ \hline
+  \verb=--date DATE= & \verb=-d DATE= & \hyperlink{whodunit-date}{date} \\ \hline
+  \verb=--x_coordinate INT= & \verb=-cx INT= & \hyperlink{whodunit-x-coordinate}{x\_coordinate} \\ \hline
+  \verb=--y_coordinate INT= & \verb=-cy INT= & \hyperlink{whodunit-y-coordinate}{y\_coordinate} \\ \hline
+  \verb=--text_style STYLE= & \verb=-x STYLE= & \hyperlink{whodunit-text-style}{text\_style} \\ \hline
+
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\section{Find Whodunit @ Configuration File}
+
+Here is an example of how the Find Whodunit settings are specified
+in the configuration file.
+
+\begin{verbatim}
+    [Whodunit_Settings]
+    radius = 200
+    time_cutoff = 144
+\end{verbatim}
+

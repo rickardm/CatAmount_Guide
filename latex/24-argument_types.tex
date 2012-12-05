@@ -1,0 +1,83 @@
+\chapter{Argument Types}
+\hypertarget{argument-types}{}
+
+The command-line arguments for the different major functions are in
+several different basic types. This reference describes each basic
+type of argument in one place.
+
+\section{CHOICE}
+\hypertarget{argument-type-choice}{}
+
+With this kind of argument, there is a restricted choice of arguments
+that can be used. An example of this is \verb=text_style=, where there
+are only a handful of styles to choose from.
+
+The restricted set of choices should be described by the command-line
+help, by a menu of choices, or by the documentation.
+
+\section{DATE}
+\hypertarget{argument-type-date}{}
+
+Many of the functions allow the user to enter a date, to limit the
+analysis to a certain time period. The preferred format for a date
+argument is \verb=YYYY-MM-DD=, see ISO 8601.
+
+The dates are parsed with dateutil, and other formats may be
+acceptable. The problem with many formats is that they are ambiguous,
+for example 04/03/02.
+
+For detailed studies you may add a time as well. Any times should be
+in UTC, because the software does all internal work using UTC. A
+combined date and time would be in the format
+\verb=YYYY-MM-DD hh:mm:ss=.
+
+\section{ID}
+\hypertarget{argument-type-id}{}
+
+Some settings require an ID argument. Examples of this type of
+argument are:
+
+\begin{itemize}
+\item find clusters for a cat having this ID
+\item zoom in on a cluster having this ID
+\item zoom in on a crossing having this ID
+\end{itemize}
+
+The ID should be a string in the standard format for each different
+object. The ID for a cluster/crossing is typically written on
+the first line of the text output for that cluster/crossing.
+
+\section{INT}
+\hypertarget{argument-type-int}{}
+
+Many settings require an integer argument, to control a numeric
+function. Example of these types of settings are radius, hours,
+pixels, and so on. An integer is a number like 1, 5, 200.
+
+\section{LIST}
+\hypertarget{argument-type-list}{}
+
+A few settings can take a list of arguments. An example of this is
+specifying several cat IDs using the command line. In this case,
+the different arguments should be separated by a comma, and no
+spaces.
+
+Here is an example list:
+
+\begin{verbatim}
+    --setting arg1,arg2,arg3
+\end{verbatim}
+
+\section{PATH}
+\hypertarget{argument-type-path}{}
+
+Some settings may require the user to enter a path to a certain
+resource on the file system. Examples of this scenario are specifying
+a data file to use, or a directory in which to create images.
+
+You should use a path that is appropriate to your OS, for example
+\verb=C:\path\to\something= on Windows and \verb=/path/to/something=
+on *nix.
+
+The path can be absolute or relative, but when in doubt use an absolute
+path.

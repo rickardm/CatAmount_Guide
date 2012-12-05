@@ -1,0 +1,167 @@
+\chapter{Find Crossings}
+\hypertarget{find-crossings}{}
+
+The goal of Find Crossings is to identify instances where one cat was
+near another in time and space. These instances, called ``crossings'',
+are another kind of relationship that can be pulled from GPS data.
+Crossings might be useful for study because they might indicate
+mating, cooperation, competition, or something else.
+
+To find crossings, we identify points that are close in space, and
+also close in time, where more than one cat was involved. The
+\verb=radius= settings defines the distance, and the
+\verb=time_cutoff= defines the time. A crossing is very much like a
+cluster that involves more than one cat.
+
+There is a full command-line interface to Find Crossings, and a GUI
+interface. Note that the GUI works by interacting with the command-line
+interface. Use whichever interface is appropriate for your project.
+
+\section{Find Crossings Files}
+
+Find Crossings is represented in the files by the following file:
+
+\begin{verbatim}
+    catamount/find_crossings.py
+\end{verbatim}
+
+\section{Find Crossings Settings}
+\hypertarget{crossing-settings}{}
+
+The following settings apply to the Find Crossings function no matter
+where it is used from. These are the ``essential'' settings which are
+used in different ways in the configuration file, the command-line
+interface, and the GUI.
+
+\begin{description}
+
+\item[catids LIST]
+\hypertarget{crossing-catids}{}
+
+Limit the search for crossings to cats having these IDs. This is useful
+if you want to more closely examine the relationship between several
+cats.
+
+The argument is of type \hyperlink{argument-type-int}{LIST}.
+
+When using the command-line interface, \verb=LIST= should be a comma
+separated list of cat IDs, as in this example:
+
+\begin{verbatim}
+    find_crossings.py --catids M001,F002,M003,F004
+\end{verbatim}
+
+In the GUI, you just select several cat IDs using the mouse.
+
+\item[radius INT]
+\hypertarget{crossing-radius}{}
+
+Design radius of a crossing, in meters. Defines how far apart can the
+points be, and still be considered a crossing.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\item[time\_cutoff INT]
+\hypertarget{crossing-time-cutoff}{}
+
+Design time cutoff of a crossing, in hours. After this amount of time,
+if two cats visit the same location, it's no longer considered a
+crossing.
+
+\item[start\_date DATE]
+\hypertarget{crossing-start-date}{}
+
+This limits the \textbf{data set} to points happening after this start
+date. The limiting happens before any attempts to find crossings.
+
+The argument is of type \hyperlink{argument-type-date}{DATE}.
+
+\verb=start_date= and \verb=end_date= can be used independently of
+each other.
+
+\item[end\_date DATE]
+\hypertarget{crossing-end-date}{}
+
+This limits the \textbf{data set} to points happening before this end
+date. The limiting happens before any attempts to find crossings.
+
+The argument is of type \hyperlink{argument-type-date}{DATE}.
+
+\verb=start_date= and \verb=end_date= can be used independently of
+each other.
+
+\item[text\_style CHOICE]
+\hypertarget{crossing-text-style}{}
+
+The text that is produced can be in one of several formats.
+
+The argument is of type \hyperlink{argument-type-choice}{CHOICE}. The text
+style \verb=CHOICE= should be one of these:
+
+\begin{itemize}
+\item \verb=csv= --- tabular format suitable for sharing between applications
+\item \verb=descriptive= --- human readable, omits the display of every point
+\item \verb=descriptive-all= --- human readable, and shows every point in the crossing
+\end{itemize}
+
+\item[crossingid ID]
+\hypertarget{crossing-crossingid}{}
+
+Zoom in on a specific crossing. \verb=ID= should be the same kind of
+ID that this script produces. Typically you would run the script once, learn
+about an interesting crossing, and copy the crossing ID. Then run the script
+again, adding an argument to zoom in on that crossing ID.
+
+The argument is of type \hyperlink{argument-type-id}{ID}.
+
+\end{description}
+
+
+\section{CLI Find Crossings}
+
+The command-line interface gives easy access to all the settings from the
+command line, and therefore from scripts. Here is how you get started with
+the command-line interface:
+
+\begin{verbatim}
+    cd C:\path\to\catamount
+    find_crossings.py --help
+\end{verbatim}
+
+Here are the settings for the command-line, along with links to
+more information about each setting.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|}
+  \hline
+  Long Form & Short Form & Reference \\ \hline \hline
+
+  \verb=--help= & \verb=-h= & Print usage info and exit \\ \hline
+  \verb=--datafile_path PATH= & \verb=-f PATH= & \hyperlink{global-datafile-path}{datafile\_path} \\ \hline
+  \verb=--outdir_path PATH= & \verb=-o PATH= & \hyperlink{global-outdir-path}{outdir\_path} \\ \hline
+  \verb=--catids CATIDS= & \verb=-c CATIDS= & \hyperlink{crossing-catids}{catids} \\ \hline
+  \verb=--radius INT= & \verb=-r INT= & \hyperlink{crossing-radius}{radius} \\ \hline
+  \verb=--time_cutoff INT= & \verb=-t INT= & \hyperlink{crossing-time-cutoff}{time\_cutoff} \\ \hline
+  \verb=--start_date DATE= & \verb=-d1 DATE= & \hyperlink{crossing-start-date}{start\_date} \\ \hline
+  \verb=--end_date DATE= & \verb=-d2 DATE= & \hyperlink{crossing-end-date}{end\_date} \\ \hline
+  \verb=--text_style STYLE= & \verb=-x STYLE= & \hyperlink{crossing-text-style}{text\_style} \\ \hline
+  \verb=--crossingid CROSSINGID= & \verb=-z CROSSINGID= & \hyperlink{crossing-crossingid}{crossingid} \\ \hline
+
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\section{Find Crossings @ Configuration File}
+
+Here is an example of how the Find Crossing settings are specified
+in the configuration file.
+
+\begin{verbatim}
+    [Crossing_Settings]
+    radius = 200
+    time_cutoff = 144
+    start_date = 0
+    end_date = 0
+\end{verbatim}
+

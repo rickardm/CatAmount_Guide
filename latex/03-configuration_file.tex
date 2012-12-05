@@ -1,0 +1,46 @@
+\chapter{Configuration File}
+\hypertarget{configuration-file}{}
+
+The main role of the configuration file is to store common settings
+between sessions of using the program. Without the configuration file,
+we would have to put default settings in the source code where it is
+harder to access. In short, the configuration file puts you in charge
+of the default settings for the program.
+
+The file is very easy to understand. The reference section contains an
+\hyperlink{example-config}{example configuration file}.
+
+The file is divided into sections. The first section holds ``Global
+Settings'' which apply to every part of the software. The remaining
+sections hold settings for different major functions. The available
+directives are described in the chapter devoted to each major
+function.
+
+Every valid configuration directive is shown in the sample
+configuration file.
+
+The configuration file is never written to by the software. To change
+the configuration file, you need to edit it with a text editor. You
+are in control of this file, and it is here for your use.
+
+\section{Configuration File Files}
+
+The software looks for the configuration in only one place, the base
+directory of the software, and under only one name
+\verb=catamount.conf=. You should find the configuration file here:
+
+\begin{verbatim}
+    catamount/catamount.conf
+\end{verbatim}
+
+The CatAmount source packages do not ship a configuration file,
+because a hasty unzipping of the source could overwrite your carefully
+crafted file. Instead the CatAmount source package ships a default
+file, at this location:
+
+\begin{verbatim}
+    catamount/catamount.default.conf
+\end{verbatim}
+
+If this is your first time using catamount, you should rename that
+file to \verb=catamount.conf= and begin editing it to your taste.

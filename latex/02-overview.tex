@@ -1,0 +1,64 @@
+\chapter{Overview}
+\hypertarget{overview}{}
+
+CatAmount is made of several parts that work together to make a
+functioning whole. This chapter explains what all the major functional
+parts are, as a way of providing an overview of the software.
+
+The basic model of the software is to have each major function
+accessible by a full command line interface. Then there is a GUI layer
+that communicates with the major functions using their command line
+interfaces. Blocks of common code that are needed by several functions
+are stored separately. A configuration file stores settings between
+sessions.
+
+
+\section{Components}
+
+This section will provide an outline of the major functional
+components, and a brief reminder of what they do. Each of these
+components is described in more detail in a subsequent section.
+
+\begin{enumerate}
+
+\item \hyperlink{configuration-file}{Configuration File}. A plain text
+  configuration file that enables you to save common settings between
+  sessions.
+
+\item \hyperlink{data-file}{Data File}. A comma-separated data file
+  containing the GPS data you wish to analyze.
+
+\item \hyperlink{output-directory}{Output Directory}. A scratch
+  directory that CatAmount can use to write out image files.
+
+\item \hyperlink{project}{Project}. A simple python ``project'' that
+  is used to make the code modular and shareable.
+
+\item \hyperlink{find-clusters}{Find Clusters}. A major function of
+  the software: Analyzes GPS data to find one cat's time/space
+  groupings, called clusters.
+
+\item \hyperlink{show-territories}{Show Territories}. A major function
+  of the software: Processes GPS data to create color-coded depictions
+  of one or more cat's territory.
+
+\item \hyperlink{find-crossings}{Find Crossings}. A major function of
+  the software: Analyzes GPS data to find instances where two or more
+  cats shared the same place in time/space, called crossings.
+
+\item \hyperlink{find-whodunit}{Find Whodunit}. A major function of
+  the software: Search through GPS data to find which cat was at a
+  certain time and location.
+
+\item \hyperlink{match-survey-to-cluster}{Match Survey To Cluster}. A
+  major function of the software. Attempt to find matches between a
+  list of field-verified site surveys, and a list of GPS clusters.
+
+\item \hyperlink{gui}{GUI}. A Tkinter GUI which allows easy operation
+  of all major functions, and easy manipulation of settings and
+  output.
+
+\item \hyperlink{font}{Font}. These are fonts that are needed by the
+  image-creating functions.
+
+\end{enumerate}

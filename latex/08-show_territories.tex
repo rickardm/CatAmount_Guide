@@ -1,0 +1,157 @@
+\chapter{Show Territories}
+\hypertarget{show-territories}{}
+
+The goal of Show Territories is to simply make a color coded
+representation that shows where one cat is in relation to others. Its
+basic function is to create a rough graphic showing a territory. This
+is useful for visualizing the data set you are working with.
+
+There are settings to limit the display to certain cats, and to
+certain dates. You can use these settings to limit the data set, and
+get immediate visual feedback about the settings.
+
+There is a full command-line interface to Show Territories, and a GUI
+interface. The GUI works by interacting with the command-line
+interface. Use whichever interface is appropriate for your project.
+
+\section{Show Territories Files}
+
+Show Territories is represented in the files by the following file:
+
+\begin{verbatim}
+    catamount/show_territories.py
+\end{verbatim}
+
+\section{Show Territory Settings}
+\hypertarget{territory-settings}{}
+
+The following settings apply to the Show Territories function no
+matter where it is used from. These are the ``essential'' settings
+which are used in different ways in the configuration file, the
+command-line interface, and the GUI.
+
+\begin{description}
+
+\item[catids LIST]
+\hypertarget{territory-catids}{}
+
+Show territories for cats with the given cat IDs. This is helpful to
+limit the display of territories to a few cats you are interested in.
+
+The argument is of type \hyperlink{argument-type-int}{LIST}.
+
+When using the command-line interface, \verb=LIST= should be a
+comma-separated list of cat IDs, as in this example:
+
+\begin{verbatim}
+    show_territories.py --catids M001,F002,M003,F004
+\end{verbatim}
+
+For the GUI, you can select one or many cats from the menu.
+
+\item[dot\_size INT]
+\hypertarget{territory-dot-size}{}
+
+Since Show Territories is primarily a graphic function there are a few
+settings to fine tune the graphic output. Dot size is the size in
+pixels of each cat's points in the graphic output.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\item[perimeter\_resolution INT]
+\hypertarget{territory-perimeter-resolution}{}
+
+This changes how the software draws the boundary around the outside of
+a cat's territory.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+The software uses a radial concept, and this argument specifies the
+number of degrees to lump together when choosing points to use in the
+border.
+
+\begin{verbatim}
+    360 degrees / X resolution = Y border points
+    360 degrees / 1 resolution = 360 border points
+    360 degrees / 9 resolution = 40 border points
+    360 degrees / 120 resolution = 3 border points
+\end{verbatim}
+
+A setting of 1 will be incredibly spiky, and a setting of 120 will be
+a triangle. I have found that 8 to 10 is a good setting. If you wind
+up with an ugly boundary around a certain cat, you might try changing
+this parameter.
+
+\item[start\_date DATE]
+\hypertarget{territory-start-date}{}
+
+This limits the \textbf{data set} to points happening after this start
+date. The limiting happens before any attempts to show territories.
+
+The argument is of type \hyperlink{argument-type-date}{DATE}.
+
+\verb=start_date= and \verb=end_date= can be used independently of
+each other.
+
+\item[end\_date DATE]
+\hypertarget{territory-end-date}{}
+
+This limits the \textbf{data set} to points happening before this end
+date. The limiting happens before any attempts to show territories.
+
+The argument is of type \hyperlink{argument-type-date}{DATE}.
+
+\verb=start_date= and \verb=end_date= can be used independently of
+each other.
+
+\end{description}
+
+
+\section{CLI Show Territories}
+
+The command-line interface gives easy access to the Show Territories
+function from the command-line, and therefore from scripts.
+
+This is how you get started with the command-line interface:
+
+\begin{verbatim}
+    cd C:\path\to\catamount
+    show_territories.py --help
+\end{verbatim}
+
+Here are the settings for the command-line, along with links to
+more information for each setting.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|}
+  \hline
+  Long Form & Short Form & Reference \\ \hline \hline
+
+  \verb=--help= & \verb=-h= & Print usage info and exit. \\ \hline
+  \verb=--datafile_path PATH= & \verb=-f PATH= & \hyperlink{global-datafile-path}{datafile\_path} \\ \hline
+  \verb=--outdir_path PATH= & \verb=-o PATH= & \hyperlink{global-outdir-path}{outdir\_path} \\ \hline
+  \verb=--catids CATIDS= & \verb=-c CATIDS= & \hyperlink{territory-catids}{catids} \\ \hline
+  \verb=--dot_size INT= & \verb=-s INT= & \hyperlink{territory-dot-size}{dot\_size} \\ \hline
+  \verb=--perimeter_resolution INT= & \verb=-r INT= & \hyperlink{territory-perimeter-resolution}{perimeter\_resolution} \\ \hline
+  \verb=--start_date DATE= & \verb=-d1 DATE= & \hyperlink{territory-start-date}{start\_date} \\ \hline
+  \verb=--end_date DATE= & \verb=-d2 DATE= & \hyperlink{territory-end-date}{end\_date} \\ \hline
+
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+
+\section{Show Territories @ Configuration File}
+
+Here is an example of how the Show Territories settings are specified
+in the configuration file.
+
+\begin{verbatim}
+    [Territory_Settings]
+    dot_size = 4
+    perimeter_resolution = 9
+    start_date = 0
+    end_date = 0
+\end{verbatim}
+

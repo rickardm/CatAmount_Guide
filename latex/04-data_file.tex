@@ -1,0 +1,69 @@
+\chapter{Data File}
+\hypertarget{data-file}{}
+
+The data file is an important component of the system, and it is the
+user who supplies this component. It should be a CSV file in a
+\hyperlink{data-file-format}{certain format}, and it should contain
+all the GPS data that needs to be analyzed at a particular time.
+
+All of the other components will refer to this file to get the data
+they need to function. The program will never alter or write to your
+data file. It is a good idea to mark your data as ``read only'' to
+prevent accidental alterations.
+
+The data file should be large enough to contain all the points you
+wish to study at a single time. If the file becomes very large, the
+software might take longer to do its work.
+
+The data file is always changing, and is not a file that is part of
+the software. You should create your own data file(s) in the
+appropriate format, containing the GPS data you wish to study. Such
+files can be anywhere on the file system, and you can change the data
+file you are using at any time.
+
+The format of the data file is \hyperlink{data-file-format}{described in detail here}.
+
+\section{Data File Files}
+
+A sample data file may have been provided with the software, in order
+to demonstrate the software's function right out of the box, and to
+demonstrate the format of the file. That sample file may be located
+here:
+
+\begin{verbatim}
+    catamount/data/ALLGPS.csv
+\end{verbatim}
+
+\section{Data File Settings}
+
+The path to the data file is a ``global setting'' because all of the
+different major functions need data to examine, in order to do their
+job. The data file can be set on the command line, or from the GUI.
+
+Data file settings are expected in the following format:
+
+\begin{description}
+
+\item[datafile\_path PATH]
+\hypertarget{global-datafile-path}{}
+
+Select a data file to interpret. \verb=PATH= should be a path to a file,
+like \verb=C:\joe\files\cougars.csv=.
+
+The argument is of type \hyperlink{argument-type-path}{PATH}
+
+\end{description}
+
+
+\section{Data File @ Configuration File}
+
+The data file is represented in the configuration file by the
+following option:
+
+\begin{verbatim}
+    [Global_Settings]
+    datafile_path = C:\you\decide\data.csv
+\end{verbatim}
+
+Change that setting to the full path of the data file you most commonly use.
+

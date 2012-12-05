@@ -1,0 +1,139 @@
+\chapter{Match Survey To Cluster}
+\hypertarget{match-survey-to-cluster}{}
+
+Match Survey To Cluster automates a particularly tedious and
+error-prone part of the research. On one hand, we have a large amount
+of GPS data which we can do wonderful things with, like find clusters
+and crossings. On the other hand, we also have a large amount of field
+work that researchers have done, investigating all manner of mountain
+lion activity.
+
+The tedious job I mentioned is that researchers would like to create a
+link between the field work and the GPS data. To do this by hand would
+be a long process involving complicated comparisons.
+
+Software can make this job a lot easier, and that is precisely what
+Match Survey To Cluster does. This function reads in a file containing
+site survey information, and it reads in a file containing GPS data.
+It then takes every site survey, and attempts to find a GPS cluster
+that matches in time and location. In fact it finds the top three
+cluster matches. And of course, the radius and time cutoff that
+determine what constitutes a ``match'' are configurable by the
+researcher.
+
+\section{Survey File Format}
+
+The survey data file should contain comma-separated text, where each
+line of text represents one site survey. The software takes each line,
+averages all the UTM coordinates, and averages all the date
+information. It then searches for matching clusters based on those
+averages.
+
+The software is able to parse the data in the CSV file only if it
+knows which columns contain coordinates, and which contain dates. Near
+the top of the file \verb=match_survey_to_clustery.py= there are a few
+simple Python lists. In these lists you specify each of the columns
+that should be considered coordinates or dates. There are furthere
+instructions on editing these lists in the source code where the
+editing happens.
+
+In summary, the software can process the CSV data only if it knows the
+name of each CSV column where it can find the data it needs.
+
+\section{Match Survey To Cluster Files}
+
+Match Survey To Cluster is represented in the files by the following
+file:
+
+\begin{verbatim}
+    catamount/match_survey_to_cluster.py
+\end{verbatim}
+
+\section{Match Survey To Cluster Settings}
+\hypertarget{survey-to-cluster-settings}{}
+
+The following settings apply to the Match Survey To Cluster function
+no matter where it is used from. These are the ``essential'' settings
+which are used in different ways in the configuration file, the
+command-line interface, and the GUI.
+
+\begin{description}
+
+\item[survey\_file\_path]
+\hypertarget{survey-to-cluster-survey-file-path}{}
+
+This is the path to the file containing the survey or field work
+information. Remember that this function takes a list of site surveys,
+and then searches through the GPS data looking for matching clusters.
+There must be a file containing site survey data or no search can be
+performed.
+
+The argument is of type \hyperlink{argument-type-path}{PATH}.
+
+\item[radius]
+\hypertarget{survey-to-cluster-radius}{}
+
+This is the design radius of a match, in meters. It defines how far
+apart a site survey can be from a cluster, and still be considered a
+match. Setting this value low will result in too few matches, and
+setting it high will result in too many matches.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\item[time\_cutoff]
+\hypertarget{survey-to-cluster-time-cutoff}{}
+
+This is the design time cutoff of a match, in hours. After this amount of time,
+a site survey will not match a cluster even if they are in the exact
+same location. Setting this value low will result in too few matches,
+and setting it high will result in too many matches.
+
+The argument is of type \hyperlink{argument-type-int}{INT}.
+
+\end{description}
+
+
+\section{CLI Match Survey To Cluster}
+
+The command-line interface gives easy access to all the settings from
+the command line. All of the options that can be used from the command
+line can also be specified in the configuration file, with the
+exception of \verb=--help=.
+
+Here is how you get start with the command-line interface:
+
+\begin{verbatim}
+    cd C:\path\to\catamount
+    match_survey_to_cluster.py --help
+\end{verbatim}
+
+Here are the settings for the command-line, along with links to more
+information for each setting.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|}
+  \hline
+  Long Form & Short Form & Reference \\ \hline \hline
+
+  \verb=--help= & \verb=-h= & Print usage info and exit. \\ \hline
+  \verb=--datafile_path PATH= & \verb=-f PATH= & \hyperlink{global-datafile-path}{datafile\_path} \\ \hline
+  \verb=--survey_file_path PATH= & \verb=-s PATH= & \hyperlink{survey-to-cluster-survey-file-path}{survey\_file\_path} \\ \hline
+  \verb=--radius INT= & \verb=-r INT= & \hyperlink{survey-to-cluster-radius}{radius} \\ \hline
+  \verb=--time_cutoff INT= & \verb=-t INT= & \hyperlink{survey-to-cluster-time-cutoff}{time\_cutoff} \\ \hline
+
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\section{Match Survey To Cluster @ Configuration File}
+
+Here is an example of how the Match Survey To Cluster settings are specified
+in the configuration file.
+
+\begin{verbatim}
+    [Match_Survey_Settings]
+    survey_file_path = C:\you\decide\survey_data.csv
+    radius = 200
+    time_cutoff = 144
+\end{verbatim}

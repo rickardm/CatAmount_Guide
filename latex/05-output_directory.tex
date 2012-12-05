@@ -1,0 +1,71 @@
+\chapter{Output Directory}
+\hypertarget{output-directory}{}
+
+Each of the major functions is able to create image feedback to verify
+that the software is functioning properly. The image files are written
+to a directory, so they can be shared between different parts of the
+application. For this reason, there always needs to be an output
+directory that the software can write to.
+
+This output directory also serves as the starting point when choosing
+to save some text or images to a new file.
+
+\begin{itemize}
+
+\item You can set the output directory in the configuration file, on
+  the command line, or using the GUI.
+
+\item If you are working on a project that involves assembling a large
+  collection of images or text, you may wish to set the output
+  directory to a special folder for that project.
+
+\item You can set the output directory to a temp directory that is
+  emptied every day, if that is something you think about.
+
+\end{itemize}
+
+\section{Output Directory Files}
+
+A sample output directory has been created for you, so that the
+software will function right out of the box. That sample directory was
+created right in the root folder:
+
+\begin{verbatim}
+    catamount/output/
+\end{verbatim}
+
+\section{Output Directory Settings}
+
+The path to the output directory is a ``global setting'' because all
+of the different major functions need some disk space to write to, in
+order to do their job. The output directory can be set on the command
+line, or from the GUI.
+
+Output directory settings are expected in the following format:
+
+\begin{description}
+
+\item[outdir\_path PATH]
+\hypertarget{global-outdir-path}{}
+
+Select an output directory where the software can make some files, and
+that serves as the base directory for ``Save As'' operations.
+\verb=PATH= should be a path to a directory, like \verb=C:\jane\stuff\output=.
+
+The argument is of type \hyperlink{argument-type-path}{PATH}
+
+\end{description}
+
+
+\section{Output Directory @ Configuration File}
+
+The output directory is represented in the configuration file by the
+following option:
+
+\begin{verbatim}
+    [Global_Settings]
+    outdir_path = C:\path\to\catamount\output
+\end{verbatim}
+
+Change that setting to a full path where the software can write out
+images.
