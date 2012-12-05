@@ -108,11 +108,13 @@ The argument is of type \hyperlink{argument-type-choice}{CHOICE}. The text
 style \verb=CHOICE= should be one of these:
 
 \begin{itemize}
-\item \verb=csv= --- tabular format suitable for sharing between applications
-\item \verb=descriptive= --- human readable, omits the display of every point
-\item \verb=descriptive-all= --- human readable, and shows every point in the cluster
+\item \verb=csv= --- machine readable, creates a table describing each cluster
+\item \verb=csv-all= --- machine readable, adds a second table showing all points
+\item \verb=descriptive= --- human readable, describes each cluster
+\item \verb=descriptive-all= --- human readable, also shows every point in the cluster
 \end{itemize}
 
+The default text style is currently \verb=csv=.
 
 \item[clusterid ID]
 \hypertarget{cluster-clusterid}{}
