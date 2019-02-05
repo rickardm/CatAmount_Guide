@@ -1,0 +1,98 @@
+\chapter{Install Python On Windows}
+\hypertarget{windows-install-python}{}
+
+Python is a popular high-level scripting language. CatAmount was
+moved to Python 3 in 2019.
+
+\section{Check if Python is already installed}
+
+Python may already be installed on your computer. To check, go
+to:
+
+\begin{verbatim}
+   Start > Settings > Control Panel > Add or Remove Programs.
+\end{verbatim}
+
+Look for Python 3.7 in the list of installed programs.
+
+
+\section{Install Python}
+
+If Python is not installed, or if the version is less than 3.7,
+it's time to install Python.
+
+Go to \url{https://www.python.org/}, and download the latest
+Python version. As of this writing, the latest version was \verb=3.7.2=
+and I will use that as an example.
+
+Choose a 32-bit or 64-bit version based on your version of Windows
+and your computer.
+
+Download the installer, run it, and install all of the components.
+
+
+\section{Add Python To Path The Easy Way}
+
+The Python 3 installer has an option to adjust the system PATH
+environment variable when installing. Adjusting the PATH in this
+way lets you launch a Python 3 interpreter without always adding
+the full path to it.
+
+The only reason you might not select this is if you know what
+you're doing and want to keep your Python 3 to a more limited install,
+and you have a way to deal with the path issues yourself.
+
+
+\section{Add Python Directory To Your Path The Old Way}
+
+\textbf{Note:} The advice in this section may be out of date with more
+recent versions of Windows. It was tested with Windows XP. I have not tested this advice in 2019.
+
+You need to add Python to your \verb=Path= so you can execute Python scripts
+from anywhere on the system. In my test, this had to be done by the user.
+
+First, check whether the Python directory is already present in your
+path. Open a command window (\verb=Start > Run > cmd=) and do this:
+
+\begin{verbatim}
+    C:\> echo %PATH%
+\end{verbatim}
+
+Look through the result and see if the Python directory is present
+there. If not, follow these steps:
+
+\begin{verbatim}
+    Start > Settings > Control Panel > System > Advanced > Environment Variables
+\end{verbatim}
+
+In the \verb=Environment Variables= window, locate \verb=System variables= at the
+bottom. There will be one called \verb=Path=. Highlight that one and
+click \verb=Edit=.
+
+In the \verb=Edit= window, go to the end of the long line of text, add a
+semicolon, and add \verb=C:\Python37= (if that is where your Python is
+installed). It will look like this:
+
+\begin{verbatim}
+    Blah;Blah;Blah;Blah;Blah;C:\Python37
+\end{verbatim}
+
+System environmental variables do not take effect until after you
+reboot! Go ahead and reboot now for the change to take effect, or
+wait until a later step when we have to add to the \verb=Path= again.
+
+\subsection{Make sure Python works}
+
+Once you reboot, open a command window and do \verb=echo %PATH%= again.
+You should now see the Python directory as part of your \verb=Path=.
+
+The real test is to see if you can launch Python from anywhere. To try
+that, open a command window, change into some random directory, and
+do:
+
+\begin{verbatim}
+   C:\Random\Directory> python3
+\end{verbatim}
+
+If that brings up a python interpreter, you have succeeded.
+Type \verb=exit()= to get out of the interpreter.

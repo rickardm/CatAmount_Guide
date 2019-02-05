@@ -1,0 +1,91 @@
+\chapter{Install Python On Mac OS X}
+\hypertarget{macosx-install-python}{}
+
+If you are already a Python user, you may already have a recent
+version of Python 3 installed. If so, you may skip this section.
+
+Otherwise, let's install a recent version of Python 3.
+
+\section{Install Python 3}
+
+
+Visit \url{https://www.python.org/} and click to download the latest stable version
+of Python 3. On the day I wrote this, the latest stable version
+is \verb=3.7.2=.
+
+Choose \verb=macOS 64-bit installer= if you are using a newer
+Mac, later than 10.9. If you have an older Mac, choose the option
+for older systems. Click to download this file.
+
+When the download has completed, you will have a file named something like
+
+\begin{verbatim}
+    python-3.7.2-macosx10.9.pkg
+\end{verbatim}
+
+Double click the \verb=.pkg= file to begin installing it. You can
+follow the instructions in the installer, and here are some notes:
+
+\begin{itemize}
+
+\item The install explains that at the end of the install we need
+  to click on ``Install Certificates'' to provide Python with a
+  curated collection of SSL certificates it can use, because it comes
+  with its own version of OpenSSL.
+
+\item We'll use the 64-bit only version of the software because
+  we are probably installing to Mac OS X 10.9 and later. If you are
+  installing to and older Mac, follow the instructions.
+
+\item Agree to the software license agreement.
+
+\item Don't change the install location, just use the default which
+  uses a nice standard.
+
+\item After installing, a Finder window pops up which shows the
+  location \verb=Applications > Python 3.7=. In this window, please
+  click on \verb=Install Certificates.command= which gets a set of
+  SSL certificates that Python can use for its built-in version
+  of OpenSSL
+
+\end{itemize}
+
+\section{Test Python 3 Is Installed}
+
+Now that we have installed Python 3, it is time to test it and
+make sure everything is set up correctly.
+
+First, you can check if Python was installed here:
+
+\begin{verbatim}
+    /Library/Frameworks/Python.framework/Versions/3.7/
+\end{verbatim}
+
+Next you can open up a terminal window and check the version
+of Python 3. Open a terminal window (\verb=Applications > Utilities > Terminal.app=)
+and do this command:
+
+\begin{verbatim}
+    python3 --version
+\end{verbatim}
+
+The result should be \verb=Python 3.7.2= or whatever version
+you recently installed.
+
+\section{Troubleshooting Python Path Issues}
+
+If you test the Python 3 version and get something that is 
+\textbf{not the same} as what you just installed, there is a cure for that.
+
+Open up a Finder and go to \verb=Applications > Python 3.7=. Click
+on \verb=Update Shell Profile.command=. This makes sure that your
+shell (inside Terminal.app) is up to date with the Python 3 you
+recently installed.
+
+\section{Python 3.7.2 Is Just An Example}
+
+In this section, I have mentioned Python 3.7.2 and 3.7 several times.
+But as time goes on, the Python 3 versions will march upwards. You
+should install the most recent stable version of Python 3. I show code
+examples with 3.7.2 because that was the most recent version when I
+wrote this.

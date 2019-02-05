@@ -1,26 +1,30 @@
+\chapter{Install CatAmount On Linux}
+\hypertarget{linux-install-catamount}{}
+
 \chapter{Setup}
 \hypertarget{setup}{}
 
-Before getting into the setup, make sure you have fulfilled the
-prerequisites for this program.
+Before getting into the setup of the application, make sure Python 3
+is installed, along with necessary shared libraries. Refer to the
+following sections:
 
 \begin{itemize}
-\item \hyperlink{prereq-windows}{Install Prerequisites On Windows}
-\item \hyperlink{prereq-linux}{Install Prerequisites On Linux}
+\item \hyperlink{linux-install-python}{Install Python 3 On Linux}
+\item \hyperlink{linux-install-libraries}{Install Libraries On Linux}
 \end{itemize}
 
 \section{Setup Procedure}
 
 CatAmount is just a zip archive with files in it. You should unzip
 the files into a directory where it can live, and where you will
-remember it lives. Here are some suggestions:
+remember it lives. For a simple example, we will put the software
+in the user's home directory:
 
 \begin{verbatim}
-    C:\Documents and Settings\Joe\apps\catamount\
-    /usr/local/bin/catamount/
+    /home/joe/catamount/
 \end{verbatim}
 
-So choose a directory, and unzip the zip archive. When you are done,
+Choose a directory, and unzip the zip archive. When you are done,
 you should wind up with approximately the following set of files.
 I'm including notes about what each file does.
 
@@ -47,12 +51,18 @@ I'm including notes about what each file does.
 \section{Make Sure It Works}
 
 If the prerequisites are in place, and the files are in place, then things
-should work. To test it, open up a command window (\verb=Start > Run > cmd=).
-In the command window, change directories until you are in the CatAmount
-folder. Try to run one of the command-line programs:
+should work. To test it, open up a terminal window.
+In the terminal window, change directories until you are in the CatAmount
+folder.
 
 \begin{verbatim}
-    C:\> find_clusters.py --help
+    $ cd /home/joe/catamount/
+\end{verbatim}
+
+Try to run one of the command-line programs:
+
+\begin{verbatim}
+    $ ./find_clusters.py --help
 \end{verbatim}
 
 If that gives you helpful messages, then everything is okay. If it complains
@@ -61,12 +71,17 @@ that something is missing, there is more work to do.
 At this point you can also try launching the GUI.
 
 \begin{verbatim}
-    C:\> tkcatamount.pyw
+    $ ./tkcatamount.pyw
 \end{verbatim}
 
 If the GUI doesn't launch and doesn't give any error messages, try launching
 it as an argument to the Python interpreter:
 
 \begin{verbatim}
-    C:\> python tkcatamount.pyw
+    $ python3 tkcatamount.pyw
 \end{verbatim}
+
+If you get persistent errors when launching the application, the best way to
+get help is to send the complete error messages to me. You may email them to
+me if you have my email address, or use the contact form on
+\url{http://www.kasploosh.com}.

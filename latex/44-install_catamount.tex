@@ -1,0 +1,87 @@
+\chapter{Install CatAmount On Mac OS X}
+\hypertarget{macosx-install-catamount}{}
+
+\section{Before You Start}
+\hypertarget{setup}{}
+
+Before getting into the setup of the application, make sure Python 3
+is installed, along with necessary shared libraries. Refer to the
+following sections:
+
+\begin{itemize}
+\item \hyperlink{macosx-install-python}{Install Python On Mac OS X}
+\item \hyperlink{macosx-install-libraries}{Install Libraries On Mac OS X}
+\end{itemize}
+
+\section{Setup Procedure}
+
+CatAmount is just a zip archive with files in it. You should unzip
+the files into a directory where it can live, and where you will
+remember it lives. For a simple example, we will place the software
+on the desktop.
+
+\begin{verbatim}
+    /Users/joe/Desktop/catamount/
+\end{verbatim}
+
+Choose a directory, and unzip the zip archive. When you are done,
+you should wind up with approximately the following set of files.
+I'm including notes about what each file does.
+
+\begin{verbatim}
+    catamount/                     <== CatAmount home
+    catamount/data/
+    catamount/data/ALLGPS.csv      <== Sample data file
+    catamount/data/survey_file.csv <== Sample survey data file
+    catamount/fonts/
+    catamount/fonts/proggy.pbm     <== Fonts used by image tools
+    catamount/fonts/proggy.pil     <== Fonts used by image tools
+    catamount/output/              <== Default output directory
+    catamount/catamount.conf       <== Configuration file
+    catamount/find_clusters.py     <== CLI program to find clusters
+    catamount/find_crossings.py    <== CLI program to find crossings
+    catamount/find_whodunit.py     <== CLI program to find whodunit
+    catamount/match_survey_to_cluster.py
+                                   \== CLI program to match surveys to clusters
+    catamount/show_territories.py  <== CLI program to show territories
+    catamount/tkcatamount.pyw      <== GUI
+    catamount/catamount/*          <== Python "project" for shared code
+\end{verbatim}
+
+\section{Make Sure It Works}
+
+If the prerequisites are in place, and the files are in place, then things
+should work. To test it, open up a terminal window (\verb=Applications > Utilities > Terminal.app=).
+
+In the terminal window, change directories until you are in the CatAmount
+folder.
+
+\begin{verbatim}
+    cd /Users/joe/Desktop/catamount/
+\end{verbatim}
+
+Try to run one of the command-line programs:
+
+\begin{verbatim}
+    $ ./find_clusters.py --help
+\end{verbatim}
+
+If that gives you helpful messages, then everything is okay. If it complains
+that something is missing, there is more work to do.
+
+At this point you can also try launching the GUI.
+
+\begin{verbatim}
+    $ ./tkcatamount.pyw
+\end{verbatim}
+
+If the GUI doesn't launch and doesn't give any error messages, try launching
+it as an argument to the Python interpreter:
+
+\begin{verbatim}
+    $ python3 tkcatamount.pyw
+\end{verbatim}
+
+If you run into persistent problems launching the applications, the best way
+to get help is to email me the error messages. If you don't have my email address
+you can contact me via \url{http://www.kasploosh.com/}.
