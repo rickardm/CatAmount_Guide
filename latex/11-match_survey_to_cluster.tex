@@ -1,25 +1,25 @@
 \chapter{Match Survey To Cluster}
 \hypertarget{match-survey-to-cluster}{}
 
-Match Survey To Cluster automates a particularly tedious and
-error-prone part of the research. On one hand, we have a large amount
-of GPS data which we can do wonderful things with, like find clusters
-and crossings. On the other hand, we also have a large amount of field
-work that researchers have done, investigating all manner of mountain
-lion activity.
+\textbf{Note:} Match Survey To Cluster was added at the request
+of the Teton Cougar Project (Wyoming, USA) in 2012. It may not
+be helpful to all teams.
 
-The tedious job I mentioned is that researchers would like to create a
-link between the field work and the GPS data. To do this by hand would
-be a long process involving complicated comparisons.
+Imagine you have two separate sets of data that both contain
+location and time. For example, you may have a large amount of GPS
+collar data in one file, and then a large amount of site visit
+information in another file.
 
-Software can make this job a lot easier, and that is precisely what
-Match Survey To Cluster does. This function reads in a file containing
-site survey information, and it reads in a file containing GPS data.
-It then takes every site survey, and attempts to find a GPS cluster
-that matches in time and location. In fact it finds the top three
-cluster matches. And of course, the radius and time cutoff that
-determine what constitutes a ``match'' are configurable by the
-researcher.
+What this function does is for every site visit in the site visit
+file, it tries to find a matching cluster in the GPS collar data.
+
+The radius and time cutoff that determine what constitutes a 
+``match'' are configurable by the researcher. The top three potential
+matches are returned.
+
+This was built to search through a survey file, and to find
+matches in the GPS collar data file. But it could potentially find
+matches in any two sets of data that are comparable.
 
 \section{Survey File Format}
 
@@ -31,7 +31,7 @@ averages.
 
 The software is able to parse the data in the CSV file only if it
 knows which columns contain coordinates, and which contain dates. Near
-the top of the file \texttt{match\_survey\_to\_clustery.py} there are a few
+the top of the file \texttt{match\_survey\_to\_cluster.py} there are a few
 simple Python lists. In these lists you specify each of the columns
 that should be considered coordinates or dates. There are further
 instructions on editing these lists in the source code where the
