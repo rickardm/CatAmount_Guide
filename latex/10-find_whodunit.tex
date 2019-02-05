@@ -74,7 +74,7 @@ The argument is of type \hyperlink{argument-type-int}{INT}.
 
 This is the request date that is the basis for the search. This should
 be a single point on a hypothetical timeline; by widening or narrowing
-the \verb=time_cutoff= you can enlarge or constrict the search period.
+the \texttt{time\_cutoff} you can enlarge or constrict the search period.
 
 The argument is of type \hyperlink{argument-type-date}{DATE}.
 
@@ -83,8 +83,8 @@ The argument is of type \hyperlink{argument-type-date}{DATE}.
 
 This is the X coordinate of the requested location, in NAD27 format.
 This is also known as the ``easting'' or ``east''. This should work
-with \verb=y_coordinate= to specify a single point in space; by
-enlarging or shrinking the \verb=radius= you can expand or contract
+with \texttt{y\_coordinate} to specify a single point in space; by
+enlarging or shrinking the \texttt{radius} you can expand or contract
 the search area.
 
 The argument is of type \hyperlink{argument-type-int}{INT}.
@@ -94,8 +94,8 @@ The argument is of type \hyperlink{argument-type-int}{INT}.
 
 This is the Y coordinate of the requested location, in NAD27 format.
 This is also known as the ``northing'' or ``north''. This should work
-with \verb=x_coordinate= to specify a single point in space; by
-enlarging or shrinking the \verb=radius= you can expand or contract
+with \texttt{x\_coordinate} to specify a single point in space; by
+enlarging or shrinking the \texttt{radius} you can expand or contract
 the search area.
 
 The argument is of type \hyperlink{argument-type-int}{INT}.
@@ -106,14 +106,14 @@ The argument is of type \hyperlink{argument-type-int}{INT}.
 The text that is produced can be in one of several formats.
 
 The argument is of type \hyperlink{argument-type-choice}{CHOICE}. The text
-style \verb=CHOICE= should be one of these:
+style \texttt{CHOICE} should be one of these:
 
 \begin{itemize}
 \item \verb=csv= --- macine readable, table of points that match or are close
 \item \verb=descriptive= --- human readable, description of points that match or are close
 \end{itemize}
 
-The default text style is currently \verb=csv=.
+The default text style is currently \texttt{csv}.
 
 \end{description}
 

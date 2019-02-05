@@ -9,8 +9,8 @@ mating, cooperation, competition, or something else.
 
 To find crossings, we identify points that are close in space, and
 also close in time, where more than one cat was involved. The
-\verb=radius= settings defines the distance, and the
-\verb=time_cutoff= defines the time. A crossing is very much like a
+\texttt{radius} settings defines the distance, and the
+\texttt{time\_cutoff} defines the time. A crossing is very much like a
 cluster that involves more than one cat.
 
 There is a full command-line interface to Find Crossings, and a GUI
@@ -44,7 +44,7 @@ cats.
 
 The argument is of type \hyperlink{argument-type-int}{LIST}.
 
-When using the command-line interface, \verb=LIST= should be a comma
+When using the command-line interface, \texttt{LIST} should be a comma
 separated list of cat IDs, as in this example:
 
 \begin{verbatim}
@@ -76,7 +76,7 @@ date. The limiting happens before any attempts to find crossings.
 
 The argument is of type \hyperlink{argument-type-date}{DATE}.
 
-\verb=start_date= and \verb=end_date= can be used independently of
+\texttt{start\_date} and \texttt{end\_date} can be used independently of
 each other.
 
 \item[end\_date DATE]
@@ -87,7 +87,7 @@ date. The limiting happens before any attempts to find crossings.
 
 The argument is of type \hyperlink{argument-type-date}{DATE}.
 
-\verb=start_date= and \verb=end_date= can be used independently of
+\texttt{start\_date} and \texttt{end\_date} can be used independently of
 each other.
 
 \item[text\_style CHOICE]
@@ -96,7 +96,7 @@ each other.
 The text that is produced can be in one of several formats.
 
 The argument is of type \hyperlink{argument-type-choice}{CHOICE}. The text
-style \verb=CHOICE= should be one of these:
+style \texttt{CHOICE} should be one of these:
 
 \begin{itemize}
 \item \verb=csv= --- machine readable, creates a table describing each crossing
@@ -105,12 +105,12 @@ style \verb=CHOICE= should be one of these:
 \item \verb=descriptive-all= --- human readable, also shows every point in the crossing
 \end{itemize}
 
-The default text style is currently \verb=csv=.
+The default text style is currently \texttt{csv}.
 
 \item[crossingid ID]
 \hypertarget{crossing-crossingid}{}
 
-Zoom in on a specific crossing. \verb=ID= should be the same kind of
+Zoom in on a specific crossing. \texttt{ID} should be the same kind of
 ID that this script produces. Typically you would run the script once, learn
 about an interesting crossing, and copy the crossing ID. Then run the script
 again, adding an argument to zoom in on that crossing ID.

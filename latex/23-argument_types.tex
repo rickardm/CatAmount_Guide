@@ -9,7 +9,7 @@ type of argument in one place.
 \hypertarget{argument-type-choice}{}
 
 With this kind of argument, there is a restricted choice of arguments
-that can be used. An example of this is \verb=text_style=, where there
+that can be used. An example of this is \texttt{text\_style}, where there
 are only a handful of styles to choose from.
 
 The restricted set of choices should be described by the command-line
@@ -20,7 +20,7 @@ help, by a menu of choices, or by the documentation.
 
 Many of the functions allow the user to enter a date, to limit the
 analysis to a certain time period. The preferred format for a date
-argument is \verb=YYYY-MM-DD=, see ISO 8601.
+argument is \texttt{YYYY-MM-DD}, see ISO 8601.
 
 The dates are parsed with dateutil, and other formats may be
 acceptable. The problem with many formats is that they are ambiguous,
@@ -29,7 +29,7 @@ for example 04/03/02.
 For detailed studies you may add a time as well. Any times should be
 in UTC, because the software does all internal work using UTC. A
 combined date and time would be in the format
-\verb=YYYY-MM-DD hh:mm:ss=.
+\texttt{YYYY-MM-DD hh:mm:ss}.
 
 \section{ID}
 \hypertarget{argument-type-id}{}
@@ -75,9 +75,9 @@ Some settings may require the user to enter a path to a certain
 resource on the file system. Examples of this scenario are specifying
 a data file to use, or a directory in which to create images.
 
-You should use a path that is appropriate to your OS, for example
-\verb=C:\path\to\something= on Windows and \verb=/path/to/something=
-on *nix.
+You should use a path that is appropriate to your OS. If you are
+on Windows you will want something like \texttt{C:\textbackslash{}path\textbackslash{}to\textbackslash{}something}.
+And if you are Mac OS X or Linux you will want \texttt{/path/to/something}
 
 The path can be absolute or relative, but when in doubt use an absolute
 path.

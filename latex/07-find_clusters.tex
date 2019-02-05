@@ -8,8 +8,8 @@ in GPS data. Clusters can represent an event such as mating, preying,
 rearing or something else.
 
 Finding clusters means essentially finding GPS points that are close
-to each other in distance, and time. The \verb=radius= setting
-controls the distance, and the \verb=time_cutoff= setting controls the
+to each other in distance, and time. The \texttt{radius} setting
+controls the distance, and the \texttt{time\_cutoff} setting controls the
 time.
 
 There is a full command-line interface to Find Clusters, and a GUI
@@ -36,7 +36,7 @@ interface, and the GUI.
 \item[catid ID]
 \hypertarget{cluster-catid}{}
 
-Show clusters for a cat with this \verb=ID=. This is mandatory, since
+Show clusters for a cat with this \texttt{ID}. This is mandatory, since
 a cluster, by definition, only involves one cat, but a data file may
 have data for many cats.
 
@@ -85,7 +85,7 @@ date. The limiting happens before any attempts to find clusters.
 
 The argument is of type \hyperlink{argument-type-date}{DATE}.
 
-\verb=start_date= and \verb=end_date= can be used independently of
+\texttt{start\_date} and \texttt{end\_date} can be used independently of
 each other.
 
 \item[end\_date DATE]
@@ -96,7 +96,7 @@ date. The limiting happens before any attempts to find clusters.
 
 The argument is of type \hyperlink{argument-type-date}{DATE}.
 
-\verb=start_date= and \verb=end_date= can be used independently of
+\texttt{start\_date} and \texttt{end\_date} can be used independently of
 each other.
 
 \item[text\_style CHOICE]
@@ -105,7 +105,7 @@ each other.
 The text that is produced can be in one of several formats.
 
 The argument is of type \hyperlink{argument-type-choice}{CHOICE}. The text
-style \verb=CHOICE= should be one of these:
+style \texttt{CHOICE} should be one of these:
 
 \begin{itemize}
 \item \verb=csv= --- machine readable, creates a table describing each cluster
@@ -114,12 +114,12 @@ style \verb=CHOICE= should be one of these:
 \item \verb=descriptive-all= --- human readable, also shows every point in the cluster
 \end{itemize}
 
-The default text style is currently \verb=csv=.
+The default text style is currently \texttt{csv}.
 
 \item[clusterid ID]
 \hypertarget{cluster-clusterid}{}
 
-Zoom in on a specific cluster. \verb=ID= should be in the same format
+Zoom in on a specific cluster. \texttt{ID} should be in the same format
 that this script produces. Typically you would run the script once,
 see an interesting cluster, and copy its ID. Then run the script
 again, adding an argument to zoom in on that cluster ID.

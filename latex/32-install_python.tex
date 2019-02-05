@@ -22,7 +22,7 @@ If Python is not installed, or if the version is less than 3.7,
 it's time to install Python.
 
 Go to \url{https://www.python.org/}, and download the latest
-Python version. As of this writing, the latest version was \verb=3.7.2=
+Python version. As of this writing, the latest version was \texttt{3.7.2}
 and I will use that as an example.
 
 Choose a 32-bit or 64-bit version based on your version of Windows
@@ -48,11 +48,11 @@ and you have a way to deal with the path issues yourself.
 \textbf{Note:} The advice in this section may be out of date with more
 recent versions of Windows. It was tested with Windows XP. I have not tested this advice in 2019.
 
-You need to add Python to your \verb=Path= so you can execute Python scripts
+You need to add Python to your \texttt{Path} so you can execute Python scripts
 from anywhere on the system. In my test, this had to be done by the user.
 
 First, check whether the Python directory is already present in your
-path. Open a command window (\verb=Start > Run > cmd=) and do this:
+path. Open a command window (\texttt{Start > Run > cmd}) and do this:
 
 \begin{verbatim}
     C:\> echo %PATH%
@@ -65,12 +65,12 @@ there. If not, follow these steps:
     Start > Settings > Control Panel > System > Advanced > Environment Variables
 \end{verbatim}
 
-In the \verb=Environment Variables= window, locate \verb=System variables= at the
-bottom. There will be one called \verb=Path=. Highlight that one and
-click \verb=Edit=.
+In the \texttt{Environment Variables} window, locate \texttt{System variables} at the
+bottom. There will be one called \texttt{Path}. Highlight that one and
+click \texttt{Edit}.
 
-In the \verb=Edit= window, go to the end of the long line of text, add a
-semicolon, and add \verb=C:\Python37= (if that is where your Python is
+In the \texttt{Edit} window, go to the end of the long line of text, add a
+semicolon, and add \texttt{C:\textbackslash{}Python37} (if that is where your Python is
 installed). It will look like this:
 
 \begin{verbatim}
@@ -79,12 +79,12 @@ installed). It will look like this:
 
 System environmental variables do not take effect until after you
 reboot! Go ahead and reboot now for the change to take effect, or
-wait until a later step when we have to add to the \verb=Path= again.
+wait until a later step when we have to add to the \texttt{Path} again.
 
 \subsection{Make sure Python works}
 
-Once you reboot, open a command window and do \verb=echo %PATH%= again.
-You should now see the Python directory as part of your \verb=Path=.
+Once you reboot, open a command window and do \texttt{echo \%PATH\%} again.
+You should now see the Python directory as part of your \texttt{Path}.
 
 The real test is to see if you can launch Python from anywhere. To try
 that, open a command window, change into some random directory, and
@@ -95,4 +95,4 @@ do:
 \end{verbatim}
 
 If that brings up a python interpreter, you have succeeded.
-Type \verb=exit()= to get out of the interpreter.
+Type \texttt{exit()} to get out of the interpreter.

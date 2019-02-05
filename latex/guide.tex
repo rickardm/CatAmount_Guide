@@ -1,4 +1,5 @@
 \documentclass[12pt,letterpaper,oneside,openany]{book}
+\usepackage{soul}
 \usepackage{color}
 \usepackage{fullpage}
 \usepackage{hyperref}
@@ -20,6 +21,11 @@
     linkcolor=linkcolor,
     urlcolor=linkcolor
 }
+
+\definecolor{lightgray}{gray}{0.9}
+\sethlcolor{lightgray}
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}
 
 \begin{document}
 
