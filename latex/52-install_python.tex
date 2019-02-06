@@ -1,18 +1,21 @@
 \chapter{Install Python On Linux}
 \hypertarget{linux-install-python}{}
 
-\section{Perhaps Python 3 Is Already Installed}
+Python is a popular high-level programming language. CatAmount was
+moved to Python 3 in 2019.
+
+\section{Check If Python 3 Is Already Installed}
 
 A Linux computer will frequently already have Python 3 installed.
-You can if you have Python 3 installed like this:
+You can check if you have Python 3 installed by opening a console
+application and checking the Python 3 version number, like this:
 
 \begin{verbatim}
-    python3 --version
+    $ python3 --version
 \end{verbatim}
 
 The results should be a recent stable version of Python. When I wrote
-this in 2019, I had Pyton 3.7.2 installed.
-
+this in 2019, I had Python 3.7.2 installed.
 
 \section{Install Python 3}
 
@@ -21,6 +24,21 @@ manager. I will give one example for my system, and you can probably
 adapt it for whatever installation method you use:
 
 \begin{verbatim}
-    apt install python3
+    $ apt update
+    $ apt install python3
 \end{verbatim}
 
+\section{Test Python 3 Is Working}
+
+Open a console application and check the python version number like this:
+
+\begin{verbatim}
+    $ python3 --version
+\end{verbatim}
+
+\section{Python 3.7.2 Is Just An Example}
+
+I have mentioned Python 3.7.2 and 3.7 several times. These were the
+most recent stable versions of Python 3 when I wrote this. As time
+goes on, the Python 3 versions will march upwards. You should install
+the most recent stable version of Python 3.

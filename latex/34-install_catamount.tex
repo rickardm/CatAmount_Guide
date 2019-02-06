@@ -1,6 +1,8 @@
 \chapter{Install CatAmount On Windows}
 \hypertarget{windows-install-catamount}{}
 
+\section{Before You Start}
+
 Before getting into the setup of the application, make sure Python 3
 is installed, along with necessary shared libraries. Refer to the
 following sections
@@ -44,10 +46,11 @@ I'm including notes about what each file does.
     catamount/catamount/*          <== Python "project" for shared code
 \end{verbatim}
 
-\section{Make Sure It Works}
+\section{Test It}
 
 If the prerequisites are in place, and the files are in place, then things
 should work. To test it, open up a command window (\texttt{Start > Run > cmd}).
+
 In the command window, change directories until you are in the CatAmount
 folder.
 
@@ -70,8 +73,10 @@ At this point you can also try launching the GUI.
     C:\> tkcatamount.pyw
 \end{verbatim}
 
-If the GUI doesn't launch and doesn't give any error messages, try launching
-it as an argument to the Python interpreter:
+\section{If There Are Problems}
+
+If the GUI doesn't launch and doesn't give any error messages, try this
+way of launching the application:
 
 \begin{verbatim}
     C:\> python3 tkcatamount.pyw

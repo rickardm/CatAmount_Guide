@@ -2,14 +2,13 @@
 \hypertarget{macosx-install-catamount}{}
 
 \section{Before You Start}
-\hypertarget{setup}{}
 
 Before getting into the setup of the application, make sure Python 3
 is installed, along with necessary shared libraries. Refer to the
 following sections:
 
 \begin{itemize}
-\item \hyperlink{macosx-install-python}{Install Python On Mac OS X}
+\item \hyperlink{macosx-install-python}{Install Python 3 On Mac OS X}
 \item \hyperlink{macosx-install-libraries}{Install Libraries On Mac OS X}
 \end{itemize}
 
@@ -48,16 +47,17 @@ I'm including notes about what each file does.
     catamount/catamount/*          <== Python "project" for shared code
 \end{verbatim}
 
-\section{Make Sure It Works}
+\section{Test It}
 
 If the prerequisites are in place, and the files are in place, then things
-should work. To test it, open up a terminal window (\texttt{Applications > Utilities > Terminal.app}).
+should work. To test it, open up a terminal window
+(\texttt{Applications > Utilities > Terminal.app}).
 
 In the terminal window, change directories until you are in the CatAmount
 folder.
 
 \begin{verbatim}
-    cd /Users/joe/Desktop/catamount/
+    $ cd /Users/joe/Desktop/catamount/
 \end{verbatim}
 
 Try to run one of the command-line programs:
@@ -75,8 +75,10 @@ At this point you can also try launching the GUI.
     $ ./tkcatamount.pyw
 \end{verbatim}
 
-If the GUI doesn't launch and doesn't give any error messages, try launching
-it as an argument to the Python interpreter:
+\section{If There Are Problems}
+
+If the GUI doesn't launch and doesn't give any error messages, try this
+way of launching the application:
 
 \begin{verbatim}
     $ python3 tkcatamount.pyw

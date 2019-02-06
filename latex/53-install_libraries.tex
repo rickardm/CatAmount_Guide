@@ -1,17 +1,33 @@
 \chapter{Install Libraries On Linux}
 \hypertarget{linux-install-libraries}{}
 
-CatAmount uses common Python modules or libraries, and I am able
-to install everything using a package manager.
+CatAmount uses common Python modules or libraries.
 
-Here is an example for Debian GNU/Linux.
+There are multiple ways to install modules/libraries. For example, via
+the package manager of the OS (\texttt{apt}, \texttt{yum}) or via
+Python's built-in package manage (\texttt{pip}).
+
+I will give an example of using a package manager on Debian GNU/Linux.
+If you prefer to use \texttt{pip}, you might try the
+\hyperlink{macosx-install-libraries}{instructions for Mac OS X}.
+
+\section{Install Required Libraries}
+
+Open a console program and try this example.
 
 \begin{verbatim}
+    $ apt update
     $ apt install python3-dateutil python3-pil python3-tk
 \end{verbatim}
 
+The above example is for Debian and \texttt{apt}, and users of other
+distributions can probably translate this for a different OS and
+package manager.
+
+\section{Problems With Required Libraries}
+
 Package names for the different versions and modules will vary between
-distributions. Try to install the prerequisites, then try running one
+distributions. Try to install the prerequisites, then try to run one
 of the scripts. If it fails to run because of some missing module, figure
 out how to install that missing module on your distribution.
 

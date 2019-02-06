@@ -1,10 +1,10 @@
 \chapter{Install Python On Windows}
 \hypertarget{windows-install-python}{}
 
-Python is a popular high-level scripting language. CatAmount was
+Python is a popular high-level programming language. CatAmount was
 moved to Python 3 in 2019.
 
-\section{Check if Python is already installed}
+\section{Check If Python 3 Is Already Installed}
 
 Python may already be installed on your computer. To check, go
 to:
@@ -15,8 +15,7 @@ to:
 
 Look for Python 3.7 in the list of installed programs.
 
-
-\section{Install Python}
+\section{Install Python 3}
 
 If Python is not installed, or if the version is less than 3.7,
 it's time to install Python.
@@ -31,10 +30,10 @@ and your computer.
 Download the installer, run it, and install all of the components.
 
 
-\section{Add Python To Path The Easy Way}
+\section{Add Python To Path, The Easy Way}
 
-The Python 3 installer has an option to adjust the system PATH
-environment variable when installing. Adjusting the PATH in this
+The Python 3 installer has an option to adjust the system \texttt{PATH}
+environment variable when installing. Adjusting the \texttt{PATH} in this
 way lets you launch a Python 3 interpreter without always adding
 the full path to it.
 
@@ -43,12 +42,12 @@ you're doing and want to keep your Python 3 to a more limited install,
 and you have a way to deal with the path issues yourself.
 
 
-\section{Add Python Directory To Your Path The Old Way}
+\section{Add Python To Path, The Old Way}
 
 \textbf{Note:} The advice in this section may be out of date with more
 recent versions of Windows. It was tested with Windows XP. I have not tested this advice in 2019.
 
-You need to add Python to your \texttt{Path} so you can execute Python scripts
+You need to add Python to your \texttt{PATH} so you can execute Python scripts
 from anywhere on the system. In my test, this had to be done by the user.
 
 First, check whether the Python directory is already present in your
@@ -81,7 +80,7 @@ System environmental variables do not take effect until after you
 reboot! Go ahead and reboot now for the change to take effect, or
 wait until a later step when we have to add to the \texttt{Path} again.
 
-\subsection{Make sure Python works}
+\section{Test Python 3 Is Working}
 
 Once you reboot, open a command window and do \texttt{echo \%PATH\%} again.
 You should now see the Python directory as part of your \texttt{Path}.
@@ -96,3 +95,10 @@ do:
 
 If that brings up a python interpreter, you have succeeded.
 Type \texttt{exit()} to get out of the interpreter.
+
+\section{Python 3.7.2 Is Just An Example}
+
+I have mentioned Python 3.7.2 and 3.7 several times. These were the
+most recent stable versions of Python 3 when I wrote this. As time
+goes on, the Python 3 versions will march upwards. You should install
+the most recent stable version of Python 3.
