@@ -16,15 +16,16 @@ window and trying this:
 
 \section{Install Python 3}
 
-Visit \url{https://www.python.org/} and click to download the latest stable version
-of Python 3. On the day I wrote this, the latest stable version
-is \texttt{3.7.2}.
+Visit \url{https://www.python.org/} and click to download the latest
+stable version of Python 3. On the day I wrote this, the latest stable
+version is \texttt{3.7.2}.
 
 Choose \texttt{macOS 64-bit installer} if you are using a newer
 Mac, later than 10.9. If you have an older Mac, choose the option
 for older systems. Click to download this file.
 
-When the download has completed, you will have a file named something like
+When the download has completed, you will have a file named something
+like
 
 \begin{verbatim}
     python-3.7.2-macosx10.9.pkg
@@ -42,7 +43,7 @@ follow the instructions in the installer, and here are some notes:
 
 \item We'll use the 64-bit only version of the software because
   we are probably installing to Mac OS X 10.9 and later. If you are
-  installing to and older Mac, follow the instructions.
+  installing to an older Mac, follow those instructions instead.
 
 \item Agree to the software license agreement.
 
@@ -51,7 +52,7 @@ follow the instructions in the installer, and here are some notes:
 
 \item After installing, a Finder window pops up which shows the
   location \texttt{Applications > Python 3.7}. In this window, please
-  click on \texttt{Install Certificates.command} which gets a set of
+  click on \texttt{Install Certificates.command} which fetches a set of
   SSL certificates that Python can use for its built-in version
   of OpenSSL
 
@@ -68,16 +69,16 @@ First, you can check if Python was installed here:
     /Library/Frameworks/Python.framework/Versions/3.7/
 \end{verbatim}
 
-Next you can open up a terminal window and check the version
-of Python 3. Open a terminal window (\texttt{Applications > Utilities > Terminal.app})
+Next you can check the version of Python 3. Open a terminal
+window (\texttt{Applications > Utilities > Terminal.app})
 and do this command:
 
 \begin{verbatim}
     $ python3 --version
 \end{verbatim}
 
-The result should be \texttt{Python 3.7.2} or whatever version
-you recently installed.
+The output version number should be the same as the package you just
+installed, in this case \texttt{Python 3.7.2}.
 
 \section{Troubleshooting Python Path Issues}
 

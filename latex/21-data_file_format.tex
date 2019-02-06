@@ -1,13 +1,16 @@
 \chapter{Data File Format}
 \hypertarget{data-file-format}{}
 
-The data file has a specific format that must be followed. This format was
-developed following the best practices of the current spreadsheet format.
-If at any time the master data format changes, the internal of CatAmount
-can be changed to match (rather than doing complicated transformations of
-data into the format described here).
+The data file has a specific format that must be followed. This format
+was developed following the practices of the Teton Cougar Project
+(Wyoming, USA) in 2012.
+
+If at any time the master data format changes, the internal of
+CatAmount can be changed to match (rather than doing complicated
+transformations of data into the format described here).
 
 \section{Format Description}
+
 As long as this remains a good format, here is a description of the format.
 
 The data file should be plain text, in comma-separated-value format.
@@ -33,7 +36,7 @@ The format for each line is this:
     [2] => fix_type
     [3] => collar_id
     [4] => utc_time
-    [5] => wyoming_time
+    [5] => local_time
     [6] => north_nad27
     [7] => east_nad27
     [8] => comment
